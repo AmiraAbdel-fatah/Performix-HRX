@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:performix_hrx/core/Utils/app_routes.dart';
+import 'package:performix_hrx/core/Utils/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      title: 'Performix HRX',
+      theme: AppTheme.lightTheme,
+      onGenerateRoute: AppRoutes.generateRoute,
+      initialRoute: AppRoutes.splash,
     );
   }
 }
