@@ -5,57 +5,57 @@ import 'app_colors.dart';
 
 class AppStyles {
   // Headings
-  static TextStyle h1 = GoogleFonts.inter(
+  static TextStyle h1 = GoogleFonts.cardo(
     fontSize: 24,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
   );
 
-  static TextStyle h2 = GoogleFonts.inter(
+  static TextStyle h2 = GoogleFonts.cardo(
     fontSize: 20,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
   );
 
-  static TextStyle h3 = GoogleFonts.inter(
+  static TextStyle h3 = GoogleFonts.cardo(
     fontSize: 18,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
   );
 
   // Body Text
-  static TextStyle bodyLarge = GoogleFonts.inter(
+  static TextStyle bodyLarge = GoogleFonts.cardo(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: AppColors.textPrimary,
   );
 
-  static TextStyle bodyMedium = GoogleFonts.inter(
+  static TextStyle bodyMedium = GoogleFonts.cardo(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColors.textPrimary,
   );
 
-  static TextStyle bodySmall = GoogleFonts.inter(
+  static TextStyle bodySmall = GoogleFonts.cardo(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
   );
 
   // Specialized Text
-  static TextStyle label = GoogleFonts.inter(
+  static TextStyle label = GoogleFonts.cardo(
     fontSize: 13,
     fontWeight: FontWeight.w600,
     color: AppColors.textMuted,
   );
 
-  static TextStyle caption = GoogleFonts.inter(
+  static TextStyle caption = GoogleFonts.cardo(
     fontSize: 11,
     fontWeight: FontWeight.w400,
     color: AppColors.textMuted,
   );
 
-  static TextStyle button = GoogleFonts.inter(
+  static TextStyle button = GoogleFonts.cardo(
     fontSize: 14,
     fontWeight: FontWeight.w600,
     color: Colors.white,
