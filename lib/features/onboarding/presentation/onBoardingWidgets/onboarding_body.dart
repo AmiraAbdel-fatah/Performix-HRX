@@ -14,7 +14,6 @@ class OnBoardingBody extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 40.h),
-        // Illustration Container
         Container(
           height: 320.h,
           width: 320.w,

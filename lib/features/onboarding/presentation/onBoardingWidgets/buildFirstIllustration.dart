@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:performix_hrx/features/onboarding/presentation/widgets/custom_circle.dart';
 
 import '../../../../core/Utils/app_colors.dart';
+import 'custom_circle.dart';
 
 class BuildFirstIllustration extends StatelessWidget {
   const BuildFirstIllustration({super.key});
