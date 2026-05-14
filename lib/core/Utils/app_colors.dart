@@ -33,6 +33,7 @@ class AppColors {
   static const Color dangerBg = Color(0xFFFEE2E2); // red-100
   static const Color info = Color(0xFF6366F1); // indigo-500
   static const Color infoBg = Color(0xFFE0E7FF); // indigo-100
+  static const Color blackColor = Color(0xFF000000); // black
 
   // Chart colors
   static const Color chartTeal = Color(0xFF0D9488);

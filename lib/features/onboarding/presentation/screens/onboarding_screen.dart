@@ -5,11 +5,11 @@ import 'package:performix_hrx/core/Utils/app_routes.dart';
 import 'package:performix_hrx/core/Utils/app_styles.dart';
 import 'package:performix_hrx/features/onboarding/data/models/onboarding_model.dart';
 import 'package:performix_hrx/features/widgets/custom_elevated_button.dart';
-import 'package:performix_hrx/features/widgets/onboarding_body.dart';
 
-import '../widgets/buildFThirdIllustration.dart';
-import '../widgets/buildFirstIllustration.dart';
-import '../widgets/buildSecondIllustration.dart';
+import '../onBoardingWidgets/buildFThirdIllustration.dart';
+import '../onBoardingWidgets/buildFirstIllustration.dart';
+import '../onBoardingWidgets/buildSecondIllustration.dart';
+import '../onBoardingWidgets/onboarding_body.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -30,7 +30,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       icon: Icons.people_alt_rounded,
       iconBgColor: const Color(0xFFE0FDF4),
       iconColor: AppColors.primary,
-      illustration: BuildFirstIllustration(),
+      illustration: const BuildFirstIllustration(),
     ),
     OnBoardingModel(
       title: 'Track Performance',
@@ -39,7 +39,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       icon: Icons.workspace_premium_rounded,
       iconBgColor: const Color(0xFFFEF3C7),
       iconColor: AppColors.warning,
-      illustration: BuildSecondIllustration(),
+      illustration: const BuildSecondIllustration(),
     ),
     OnBoardingModel(
       title: 'Data-Driven Insights',
@@ -48,7 +48,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       icon: Icons.trending_up_rounded,
       iconBgColor: const Color(0xFFDCFCE7),
       iconColor: AppColors.success,
-      illustration: BuildThirdIllustration(),
+      illustration: const BuildThirdIllustration(progress: 100),
     ),
   ];
 
@@ -62,15 +62,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             // Skip Button
             Align(
               alignment: Alignment.topRight,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, AppRoutes.login);
-                },
-                child: Text(
-                  'Skip',
-                  style: AppStyles.bodyMedium.copyWith(
-                    color: AppColors.textSecondary,
-                    fontWeight: FontWeight.w600,
+              child: Padding(
+                padding: EdgeInsets.only(right: 8.w),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, AppRoutes.login);
+                  },
+                  child: Text(
+                    'Skip',
+                    style: AppStyles.bodyMedium.copyWith(
+                      color: AppColors.textSecondary,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),
@@ -120,7 +123,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     text: _currentPage == _pages.length - 1
                         ? 'Get Started'
                         : 'Next',
-                    icon: Icons.arrow_forward_rounded,
+                    suffixIcon: Icon(
+                      Icons.arrow_forward_rounded,
+                      color: Colors.white,
+                      size: 20.sp,
+                    ),
                     onPressed: () {
                       if (_currentPage < _pages.length - 1) {
                         _pageController.nextPage(

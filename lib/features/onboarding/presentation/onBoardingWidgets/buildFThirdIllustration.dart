@@ -24,20 +24,20 @@ class _BuildThirdIllustrationState extends State<BuildThirdIllustration>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2500), // Smooth 2.5s duration
+      duration: const Duration(milliseconds: 2500),
     );
 
     _animation =
         Tween<double>(begin: 0, end: widget.progress).animate(
           CurvedAnimation(
             parent: _controller,
-            curve: Curves.easeInOutCubic, // Elegant acceleration/deceleration
+            curve: Curves.easeInOutCubic,
           ),
         )..addListener(() {
-          setState(() {}); // Rebuild to update both chart and text
+          setState(() {});
         });
 
-    _controller.forward(); // Start animation automatically on build
+    _controller.forward();
   }
 
   @override
@@ -56,7 +56,7 @@ class _BuildThirdIllustrationState extends State<BuildThirdIllustration>
         series: <CircularSeries<_ChartData, String>>[
           RadialBarSeries<_ChartData, String>(
             dataSource: [
-              _ChartData('Progress', _animation.value, AppColors.success),
+              _ChartData('Progress', _animation.value, AppColors.primary),
             ],
             xValueMapper: (_ChartData data, _) => data.x,
             yValueMapper: (_ChartData data, _) => data.y,
@@ -64,10 +64,8 @@ class _BuildThirdIllustrationState extends State<BuildThirdIllustration>
             maximumValue: 100,
             radius: '100%',
             innerRadius: '80%',
-            trackColor: AppColors.success.withOpacity(0.1),
+            trackColor: AppColors.primary.withValues(alpha: 0.1),
             cornerStyle: CornerStyle.bothCurve,
-            // We set animationDuration to 0 because we are driving
-            // the progress frame-by-frame via our own AnimationController
             animationDuration: 0,
           ),
         ],
